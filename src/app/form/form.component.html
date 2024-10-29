@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <input formControlName="id" placeholder="ID">
+  <input formControlName="startDate" placeholder="Start Date" type="date">
+  <input formControlName="endDate" placeholder="End Date" type="date">
+  <button type="submit">Add</button>
+</form>
+
+<ul>
+  <li *ngFor="let data of dataList; let i = index">
+    {{ data.id }} - {{ data.startDate }} - {{ data.endDate }}
+    <button (click)="deleteItem(i)">Delete</button>
+  </li>
+</ul>
+
+<button (click)="sendData()">Submit List</button>
